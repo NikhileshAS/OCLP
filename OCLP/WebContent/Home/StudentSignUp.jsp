@@ -132,15 +132,26 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<li>
 		<label class="w3ls-opt">Department<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
-				<input type="text" name="dept" placeholder="department" required=""/>
+				<select>
+				<option>SELECT YOUR DEPARTMENT</option>
+				<option>CSE</option>
+				<option>IT</option>
+				<option>ECE</option>
+				<option>EEE</option>
+				<option>AUTO</option>
+				<option>ETE</option>
+				<option>MECH</option>
+				<option>CIVIL</option>
+				<option>EIE</option>
+				
+				</select>
 			</span>
 	</li>
 	<li>
 	<input type="date" name="dateofbirth" id="dateofbirth">
 		<label class="w3ls-opt">DateOfBirth<span class="w3ls-star"> * </span></label>	
 			 <span class="w3ls-text w3ls-name"> 
-				
-				</input>				
+			 </input>				
 			</span>
 	</li>
 	<li>
@@ -156,8 +167,47 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<input type="text" name="city" placeholder="city" required=""/>
 				
 			</span>
-			<span class="text">
-				<input type="text" name="state" placeholder="state/province"  required=""/>
+			
+			<span class="w3ls-text w3ls-name">
+				<select>
+				<option>select state</option>
+				<option>Andhra Pradesh</option>
+<option>Arunachal Pradesh</option>
+<option>Assam</option>		
+<option>Bihar</option>
+<option>Chhattisgarh</option>
+<option>Goa</option>
+<option>Gujarat</option>
+<option>Haryana</option>
+<option>Himachal Pradesh</option>
+<option>Jammu and Kashmir</option>
+<option>Jharkhand</option>
+<option>Karnataka</option>
+<option>Kerala</option>
+<option>Madhya Pradesh</option>
+<option>Maharashtra</option>
+<option>Manipur</option>
+<option>Meghalaya</option>
+<option>Mizoram</option>
+<option>Nagaland</option>
+<option>Odisha</option>
+<option>Punjab</option>
+<option>Rajasthan</option>
+<option>Sikkim</option>
+<option>Tamil Nadu</option>
+<option>Telangana</option>
+<option>Tripura</option>
+<option>Uttarakhand</option>
+<option>Uttar Pradesh</option>
+<option>West Bengal</option>
+<option>Andaman and Nicobar Islands</option>
+<option>Chandigarh</option>
+<option>Dadra and Nagar Haveli</option>
+<option>Daman and Diu</option>
+<option>Delhi</option>
+<option>Lakshadweep</option>
+<option>Puducherry</option>
+				</select>
 				
 			</span>
 			<span class="text">
@@ -171,7 +221,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<li>
 		<label class="w3ls-opt">phone number<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
-				<input type="text" name="phone number" placeholder="phone number" required=""/>
+				<input type="text" name="phone number"  maxlength="10"  pattern="[0-9]{10}" placeholder="phone number" required/>
 			</span>
 	</li>
 	<li>
@@ -188,7 +238,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<input type="text" name="cgpa" placeholder="CGPA" required=""/>
 			</span>
 	</li>
-	
 </ul>
 <div class="clear"></div>
 	<div class="w3ls-btn">
@@ -201,4 +250,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </body>
 </html>
       
-      
+	
+	
+	
