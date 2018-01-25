@@ -147,6 +147,7 @@ function fun()
 		     <option>EIE</option>
 		     <option>EEE</option>
 		     <option>MCA</option>
+		     <option>MBA</option>
 		     </select>
 			</span>
 	</li>
