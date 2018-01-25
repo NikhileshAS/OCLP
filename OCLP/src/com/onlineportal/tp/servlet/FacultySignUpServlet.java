@@ -38,6 +38,7 @@ public class FacultySignUpServlet extends HttpServlet {
         	String mobile = request.getParameter("phone number");
         	String email = request.getParameter("email");
         	String experience  = request.getParameter("exp");
+        	String faculty_subject =request.getParameter("subject");
         	        	
         	_fbList.add(new FacultyBean());
         	_fbList.get(_fbList.size()-1).setFacultyName(userName);
@@ -52,6 +53,8 @@ public class FacultySignUpServlet extends HttpServlet {
         	_fbList.get(_fbList.size()-1).setEmailId(email);
         	_fbList.get(_fbList.size()-1).setExperience(experience);
         	_fbList.get(_fbList.size()-1).setFacultyPassword(id);
+        	_fbList.get(_fbList.size()-1).setFaculty_subject(faculty_subject);
+        	
         	
         	UserDAO daoObj = new UserDAO();
         	if(daoObj.facultyRegister(_fbList.get(_fbList.size()-1))){

@@ -87,9 +87,6 @@ input {
       </div>
       </body>
       </html>
-      
-      
-
 <html>
 <head>
 <title>Faculty registration form</title>
@@ -105,14 +102,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet"><!--online_fonts-->
 <link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><!--online_fonts-->
 <script>
-function fun()
-{
-	var phnno=document.FacultyRegisteration.phonenumber.value;
-	if(phnno.length!=10)
-		{
-		window.alert("Enter valid Number");
-		}
-	}
 </script>
 </head>
 <body>
@@ -134,9 +123,21 @@ function fun()
 		</div>
 	</li>
 	<li>
+		<label class="w3ls-opt">Gender<span class="w3ls-star"> * </span></label>	
+			<span class="w3ls-text w3ls-name">
+				<select name="gender">
+				<option>Select Gender</option>
+				<option>Male</option>
+				<option>Female</option>
+				
+							
+				</select>
+			</span>
+	</li>
+	<li>
 		<label class="w3ls-opt">Department<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
-		     <select>
+		     <select name="dept">
 		     <option>Select your department</option>
 		     <option>CSE</option>
 		     <option>IT</option>
@@ -154,7 +155,7 @@ function fun()
 	<li>
 		<label class="w3ls-opt">Subject<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
-				 <select>
+				 <select name="subject">
 		     <option>Select your subject</option>
 		     <option>Java</option>
 		     <option>C</option>
@@ -171,21 +172,20 @@ function fun()
 	<input type="date" name="dateofbirth" id="dateofbirth">
 		<label class="w3ls-opt">DateOfBirth<span class="w3ls-star"> * </span></label>	
 			 <span class="w3ls-text w3ls-name"> 
-				
-				</input>				
+			</input>				
 			</span>
 	</li>
 	<li>
 		<label class="w3ls-opt">current address <span class="w3ls-star"> * </span> </label>
 		<div class="adderss">
 			<span class="text">
-				<input type="text" name="stAddress" placeholder="street address" required=" "/>
+				<input type="text" name="stAddress" placeholder="street address" required/>
 			</span>
 			<span class="text">
-				<input type="text" name="st2Address" placeholder="street line2" required=" "/>
+				<input type="text" name="st2Address" placeholder="street line2" required/>
 			</span>
 			<span class="text">
-				<input type="text" name="city" placeholder="city" required=""/>
+				<input type="text" name="city" placeholder="city" required/>
 				
 			</span>
 			<span class="w3ls-text w3ls-name">

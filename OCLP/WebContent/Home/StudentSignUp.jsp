@@ -129,11 +129,26 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<input type="text" name="rollno" placeholder="rollno" required=""/>
 		</div>
 	</li>
+	
+	<li>
+		<label class="w3ls-opt">Gender<span class="w3ls-star"> * </span></label>	
+			<span class="w3ls-text w3ls-name">
+				<select name="gender">
+				<option>Select Gender</option>
+				<option>Male</option>
+				<option>Female</option>
+				
+							
+				</select>
+			</span>
+	</li>
+	
+	
 	<li>
 		<label class="w3ls-opt">Department<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
-				<select>
-				<option>SELECT YOUR DEPARTMENT</option>
+				<select name=dept>
+				<option>select your Department</option>
 				<option>CSE</option>
 				<option>IT</option>
 				<option>ECE</option>
@@ -171,7 +186,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</span>
 			
 			<span class="w3ls-text w3ls-name">
-				<select>
+				<select name="state">
 				<option>select state</option>
 				<option>Andhra Pradesh</option>
 <option>Arunachal Pradesh</option>

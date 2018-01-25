@@ -31,6 +31,7 @@ public class StudentSignUpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	String userName = request.getParameter("username");
     	String id = "S_"+request.getParameter("rollno");
+    	String gender=request.getParameter("gender");
        	String dept = request.getParameter("dept");
     	String dob = request.getParameter("dateofbirth");
     	String streetAddress = request.getParameter("stAddress");
@@ -57,7 +58,7 @@ public class StudentSignUpServlet extends HttpServlet {
     	_sbList.get(_sbList.size()-1).setStudId(id);
     	_sbList.get(_sbList.size()-1).setStreet(streetAddress+","+streetAddress2);
     	_sbList.get(_sbList.size()-1).setState(state);
-    	_sbList.get(_sbList.size()-1).setGender("Male"); 
+    	_sbList.get(_sbList.size()-1).setGender(gender); 
     	_sbList.get(_sbList.size()-1).setCgpa(cgpa);
     	UserDAO daoObj = new UserDAO();
     
