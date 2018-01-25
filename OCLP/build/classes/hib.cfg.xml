@@ -10,10 +10,10 @@
 		<!-- Database connection settings -->
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		<property name="hibernate.connection.url">
-			jdbc:oracle:thin:@localhost:1521:XE
+			jdbc:oracle:thin:@localhost:1521:xe 
 		</property>
-		<property name="hibernate.connection.username">system</property>
-		<property name="hibernate.connection.password">nikhi3896</property>
+		<property name="hibernate.connection.username">oracle</property>
+		<property name="hibernate.connection.password">oracle</property>
 		<!-- Echo all executed SQL to stdout -->
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
