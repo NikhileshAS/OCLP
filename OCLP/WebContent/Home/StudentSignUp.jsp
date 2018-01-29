@@ -248,7 +248,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </ul>
 <div class="clear"></div>
 	<div class="w3ls-btn">
-		<input type="submit" value="submit" onclick=""/>
+		<input type="submit" value="submit"/>
 	</div>
 </form>
 </div>

@@ -34,8 +34,8 @@ public class FacultyBean {
 	public String getFaculty_subject() {
 		return faculty_subject;
 	}
-	public void setFaculty_subject(String faculyt_subject) {
-		this.faculty_subject = faculyt_subject;
+	public void setFaculty_subject(String faculty_subject) {
+		this.faculty_subject = faculty_subject;
 	}
 	public String getFacultyId() {
 		return facultyId;
