@@ -1,11 +1,8 @@
 package com.onlineportal.tp.dao;
-
 import java.util.LinkedList;
 import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import com.onlineportal.tp.bean.AdministratorBean;
 import com.onlineportal.tp.bean.FacultyBean;
 import com.onlineportal.tp.bean.FacultyBean;
@@ -16,7 +13,8 @@ public class UserDAO {
 	private Session sess = HibernateUtil.getSessionFactory().openSession();
 	@SuppressWarnings({ "unchecked" })
 	//-------- Admin Sign in---------------------
-	public AdministratorBean checkAdministratorSignIn(String uname,String password ){
+	public AdministratorBean checkAdministratorSignIn(String uname,String password )
+	{
 		Transaction tc = sess.beginTransaction();
 		try{
 				
@@ -27,8 +25,7 @@ public class UserDAO {
 				tc.commit();
 				return  _abList.get(0);
 			}
-		
-		}	
+	 }	
 		catch(Exception e){
 			System.out.println(e);
 		}
@@ -38,37 +35,41 @@ public class UserDAO {
 	
 	//------------- Faculty Sign In -------------------
 	
-	public FacultyBean checkFacultySignIn(String uname,String password ){
+	public FacultyBean checkFacultySignIn(String uname,String password )
+	{
 		Transaction tc = sess.beginTransaction();
 		try{
 				
 		List<FacultyBean> _fbList = new LinkedList<FacultyBean>();
 		_fbList = sess.createQuery("Select password from admin where rollno = :uname").list();	
-			if(_fbList.size() == 1 && _fbList.get(0).getFacultyPassword().equals(password)){
+			if(_fbList.size() == 1 && _fbList.get(0).getFacultyPassword().equals(password))
+			{
 				tc.commit();
 				return  _fbList.get(0);
 			}
 		
 		}	
-		catch(Exception e){
+		catch(Exception e)
+		{
 			System.out.println(e);
 		}
 		return null;
-		
 	}
 	
 	//------------- Student Sign In ----------------------
 	
-	public StudentBean checkStudentSignIn(String uname,String password ){
+	public StudentBean checkStudentSignIn(String uname,String password )
+	{
 		Transaction tc = sess.beginTransaction();
-		try{
-				
-		List<StudentBean> _sbList = new LinkedList<StudentBean>();
+		try
+		{
+	  List<StudentBean> _sbList = new LinkedList<StudentBean>();
 								
 			_sbList = sess.createQuery("Select studpassword from student where studid = :uname").setParameter(uname, password).list();	
 			System.out.println(_sbList.get(0).getStudId());
 			
-			if(_sbList.size() == 1 && _sbList.get(0).getStudPassword().equals(password)){
+			if(_sbList.size() == 1 && _sbList.get(0).getStudPassword().equals(password))
+			{
 				tc.commit();
 				return  _sbList.get(0);
 			}
@@ -78,11 +79,11 @@ public class UserDAO {
 			System.out.println(e);
 		}
 		return null;
-		
-	}
+		}
 	
 	//--------- Register new Student -------------------------
-	public boolean studentRegister(StudentBean studentBeanObject){
+	public boolean studentRegister(StudentBean studentBeanObject)
+	{
 		Transaction tc = sess.beginTransaction();
 		try{
 			sess.save(studentBeanObject);
@@ -109,11 +110,4 @@ public class UserDAO {
 		}
 		return false;
 	}
-		
-
-		
-		
 }
-	
-	
-

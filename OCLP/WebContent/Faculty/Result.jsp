@@ -44,10 +44,10 @@
       <div class="probootstrap-overflow">
         <nav class="probootstrap-nav">
           <ul>
-            <li class="probootstrap-animate " data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Home.html">Home</a></li>
-            <li class="probootstrap-animate" data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Assessment.html">Assessments</a></li>
-            <li class="probootstrap-animate active" data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Result.html">View Results</a></li>
-            <li class="probootstrap-animate" data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Discussion_form.html">Discussion Forum</a></li>
+            <li class="probootstrap-animate " data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Home.jsp">Home</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Assessment.jsp">Assessments</a></li>
+            <li class="probootstrap-animate active" data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Result.jsp">View Results</a></li>
+            <li class="probootstrap-animate" data-animate-effect="fadeInLeft" style="color:black;font-size:20px;font-family:"Arial"><a href="Disscussion_form.jsp">Discussion Forum</a></li>
            </ul>
         </nav>
         <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">

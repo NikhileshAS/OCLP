@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
   <style>
-  [type="date"] {
+  [type="date"] 
+  {
   background: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
 }
-[type="date"]::-webkit-inner-spin-button {
+[type="date"]::-webkit-inner-spin-button 
+{
   display: none;
 }
-[type="date"]::-webkit-calendar-picker-indicator {
+[type="date"]::-webkit-calendar-picker-indicator 
+{
   opacity: 0;
 }
-
-
 /* custom styles */
 body {
   padding: 4em;
   background: #e5e5e5;
   font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
-
 input {
   border: 1.5px solid white;
   border-radius: 5px;
@@ -44,11 +43,9 @@ input {
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
-  
     <div class="probootstrap-page-wrapper">
       <!-- Fixed navbar -->
-      
-      <nav class="navbar navbar-default probootstrap-navbar">
+       <nav class="navbar navbar-default probootstrap-navbar">
         <div class="container">
           <div class="navbar-header">
             <div class="btn-more js-btn-more visible-xs">
@@ -84,9 +81,7 @@ input {
           </div>
         </div>
       </nav>
-      
-      
-       <script src="js/scripts.min.js"></script>
+      <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
       </div>
@@ -137,13 +132,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<option>Select Gender</option>
 				<option>Male</option>
 				<option>Female</option>
-				
-							
 				</select>
 			</span>
 	</li>
-	
-	
 	<li>
 		<label class="w3ls-opt">Department<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
@@ -160,8 +151,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<option>EIE</option>
 				<option>MCA</option>
 				<option>MBA</option>
-							
-				</select>
+		  </select>
 			</span>
 	</li>
 	<li>
@@ -263,7 +253,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </form>
 </div>
 </div>
-
 </body>
 </html>
       

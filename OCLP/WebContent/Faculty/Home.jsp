@@ -3,7 +3,8 @@
 <html lang="en">
   <head>
    <style>
-        .container {
+        .container 
+{
   position: relative;
   width: 50%;
 }
@@ -27,7 +28,8 @@
   background-color: blue;
 }
 
-.container:hover .overlay {
+.container:hover .overlay 
+{
   opacity: 10;
 }
 
@@ -44,13 +46,12 @@
 }
    
   </style>
- 
-    <!-- 
+  <!-- 
     More Templates Visit ==> ProBootstrap.com
     Free Template by ProBootstrap.com under the License Creative Commons 3.0 ==> (probootstrap.com/license)
-
     IMPORTANT: You can do whatever you want with this template but you need to keep the footer link back to ProBootstrap.com
     -->
+    
     <title>KCE|Online Course Learning Portal</title>
     <link rel="icon" href="images/kce.png" type="image/png"/>
     <meta charset="utf-8">
@@ -75,12 +76,9 @@
   </head>
   <body>
   <div class="w3-container w3-center w3-animate-bottom">
-  <h1>START LEARNING!!!!!</h1>
-  	
- 
+  <h1 align="center">START LEARNING!!!!!</h1>
  </div>
-    
-    <aside class="probootstrap-aside js-probootstrap-aside">
+  <aside class="probootstrap-aside js-probootstrap-aside">
       <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
       <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
         
@@ -100,13 +98,10 @@
         <p></p>
          <p></p>
           <p></p>
-        
-          <p>&copy;<a href="https://kce.ac.in/" target="_blank">Karpagam College of Engineering</a>. <br> All Rights Reserved.</p>
+        <p>&copy;<a href="https://kce.ac.in/" target="_blank">Karpagam College of Engineering</a>. <br> All Rights Reserved.</p>
         </footer>
       </div>
     </aside>
-
-
     <main role="main" class="probootstrap-main js-probootstrap-main">
       <div class="probootstrap-bar">
         <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
@@ -144,7 +139,6 @@
   </div>
         </div>
         </div>
-        
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -195,10 +189,7 @@
   </div>
         </div>
         </div>
-		
-
-
-      <div class="container-fluid d-md-none">
+	<div class="container-fluid d-md-none">
         <div class="row">
           <div class="col-md-12">
             <ul class="list-unstyled d-flex probootstrap-aside-social">
@@ -210,8 +201,7 @@
           </div>
         </div>
       </div>
-
-    </main>
+</main>
  <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
