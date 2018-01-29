@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.onlineportal.tp.bean.FacultyBean"%>
 <%@page import="com.onlineportal.tp.bean.StudentBean"%>
 <html lang="en">
   <head>
@@ -75,7 +76,13 @@
   </head>
   <body>
   <div class="w3-container w3-center w3-animate-bottom">
-  <h1>START LEARNING!!!!!</h1>
+  <h1 align="center">START LEARNING!!!!!</h1>
+  
+  <%
+  	 
+  	FacultyBean facultyBean = (FacultyBean) request.getSession().getAttribute("session");
+  %>
+  <h2>Welcome, <%= facultyBean.getFacultyName() %></h2>
   	
  
  </div>

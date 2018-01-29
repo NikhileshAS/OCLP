@@ -3,6 +3,7 @@ package com.onlineportal.tp.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,26 +29,62 @@ public class LoginServlet extends HttpServlet {
 		//System.out.println("Hello");
 		String loginId=request.getParameter("userName");
 		String password=request.getParameter("password");
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(true);
+		String successDestination = "../Faculty/Home.jsp";
+		String failureDestination = "Login.jsp";
+		String empty = "empty";
 		
 		try{
 		UserDAO dao = new UserDAO();
 		if(loginId.startsWith("S_")) {
-			StudentBean studentBeanObj = dao.checkStudentSignIn(loginId, password);
-			request.setAttribute("StudentBean", studentBeanObj);
-			request.getRequestDispatcher("../Faculty/Home.jsp").forward(request, response);
-			
+			StudentBean stud = dao.checkStudentSignIn(loginId, password);
+			if(stud != null) {
+				session.setAttribute("session", stud);
+				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
+				response.sendRedirect(successDestination);
+			}
+			else {
+				session.setAttribute("session", empty);
+				//getServletContext().getRequestDispatcher(failureDestination).forward(request, response);;
+				response.sendRedirect(failureDestination);
+			}
 		}
+		
 		else if(loginId.startsWith("F_")) {
 			FacultyBean facultyBeanObj = dao.checkFacultySignIn(loginId, password);
-			response.sendRedirect("../Faculty/Home.jsp");
+			
+			if(facultyBeanObj != null) {
+				session.setAttribute("session", facultyBeanObj);
+				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
+				response.sendRedirect(successDestination);
+
+			}
+			else
+			{
+				session.setAttribute("session", empty);
+				//getServletContext().getRequestDispatcher(failureDestination).forward(request, response);;
+				response.sendRedirect(failureDestination);
+
+			}
 		}
+			
 		else if(loginId.startsWith("A_")) {
 			AdministratorBean administratorBeanObj = dao.checkAdministratorSignIn(loginId, password);
-			response.sendRedirect("../Faculty/Home.jsp");
+			if(administratorBeanObj != null) {
+				session.setAttribute("session", administratorBeanObj);
+				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
+				response.sendRedirect(successDestination);
+
+			}
+			else
+			{
+				session.setAttribute("session", empty);
+				//getServletContext().getRequestDispatcher(failureDestination).forward(request, response);;
+				response.sendRedirect(failureDestination);
+
+			}
 		}
-		
-		
+				
 		}
 		catch(Exception e){
 			System.out.println(e);
