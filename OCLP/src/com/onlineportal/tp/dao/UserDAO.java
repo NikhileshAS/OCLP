@@ -41,27 +41,17 @@ public class UserDAO {
 	{
 		Transaction tc = sess.beginTransaction();
 		try{
-				
-		List<FacultyBean> _fbList = new LinkedList<FacultyBean>();
-
-
-		_fbList = sess.createQuery("Select password from admin where rollno = :uname").list();	
-		tc.commit();	
-		
-				
-		_fbList = sess.createQuery("from FacultyBean").list();	
-			for(FacultyBean facultyBean : _fbList) {
+				List<FacultyBean> _fbList = new LinkedList<FacultyBean>();
+       _fbList = sess.createQuery("from FacultyBean").list();	
+		tc.commit();
+		for(FacultyBean facultyBean : _fbList) {
 				if(facultyBean.getFacultyId().equals(uname) && facultyBean.getFacultyPassword().equals(password)) {
-					System.out.println(facultyBean.getFacultyName());
 					return facultyBean;
 				}
 
 			}
 		
 		}
-			
-		
-			
 		catch(Exception e)
 		{
 			System.out.println(e);

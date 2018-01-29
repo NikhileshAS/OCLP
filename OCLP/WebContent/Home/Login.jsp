@@ -94,10 +94,13 @@
 
  <h3 style="font-family: sans-serif;;font-weight:bold;color:navy;">SIGN-IN</h3>
  
- // Mugil will do
- 
- 
- 
+ <%
+  String  str= (String) request.getSession().getAttribute("session");
+  %>
+  
+  <% if(str.equalsIgnoreCase("empty")) { %>
+ <h2> INVALID USERNAME OR PASSWORD</h2>
+ <%} %>
 
 <div class="main-agileinfo">
 	

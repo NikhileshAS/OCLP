@@ -77,8 +77,8 @@
   </head>
   <body>
   <div class="w3-container w3-center w3-animate-bottom">
-  <h1 align="center">START LEARNING!!!!!</h1>
-<<<<<<< HEAD
+  <h1 align="center">START TEACHING!!!!!</h1>
+
 =======
   
   <%
@@ -86,9 +86,9 @@
   	FacultyBean facultyBean = (FacultyBean) request.getSession().getAttribute("session");
   %>
   <h2>Welcome, <%= facultyBean.getFacultyName() %></h2>
-  	
+ <% String sub = facultyBean.getFaculty_subject(); %>
  
->>>>>>> branch 'master' of https://github.com/NikhileshAS/OCLP.git
+
  </div>
   <aside class="probootstrap-aside js-probootstrap-aside">
       <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
@@ -121,6 +121,8 @@
       </div>
       
       <div class="card-columns">
+      <% if(sub.equalsIgnoreCase("Data Structure"))  {%>
+
       <div class="card">
       <div class="container">
           <a href="single.jsp">
@@ -131,6 +133,9 @@
  			 	</div>
   			</div>
         </div>
+        <% } %>
+        
+         <% if(sub.equalsIgnoreCase("c")) { %>
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -141,6 +146,10 @@
   </div>
         </div>
         </div>
+        <% } %>
+        
+         <% if(sub.equalsIgnoreCase("c++"))  {%>
+    
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -151,6 +160,10 @@
   </div>
         </div>
         </div>
+        <% } %>
+        
+         <% if(sub.equalsIgnoreCase("OS"))  {%>
+    
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -161,6 +174,9 @@
   </div>
         </div>
         </div>
+        <%} %>
+         <% if(sub.equalsIgnoreCase("java"))  { %>
+     
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -171,6 +187,10 @@
   </div>
         </div>
         </div>
+        <% } %>
+        
+         <% if(sub.equalsIgnoreCase("Computer Network")) { %>
+    
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -181,6 +201,10 @@
   </div>
         </div>
         </div>
+        <% } %>
+        
+         <% if(sub.equalsIgnoreCase("dbms"))  { %>
+     
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -191,6 +215,10 @@
   </div>
         </div>
         </div>
+        <% } %>
+        
+         <% if(sub.equalsIgnoreCase("Aptitude"))  {%>
+     
         <div class="card">
         <div class="container">
           <a href="single.jsp">
@@ -201,6 +229,7 @@
   </div>
         </div>
         </div>
+        <% } %>
 	<div class="container-fluid d-md-none">
         <div class="row">
           <div class="col-md-12">
