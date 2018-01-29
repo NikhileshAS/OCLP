@@ -44,21 +44,31 @@ public class UserDAO {
 				
 		List<FacultyBean> _fbList = new LinkedList<FacultyBean>();
 
+
 		_fbList = sess.createQuery("Select password from admin where rollno = :uname").list();	
 		tc.commit();	
-		for(FacultyBean facultyBean : _fbList) {
-			if(facultyBean.getFacultyId().equals(uname) && facultyBean.getFacultyPassword().equals(password)) {
-				System.out.println(facultyBean.getFacultyId());
-				return facultyBean;
+		
+				
+		_fbList = sess.createQuery("from FacultyBean").list();	
+			for(FacultyBean facultyBean : _fbList) {
+				if(facultyBean.getFacultyId().equals(uname) && facultyBean.getFacultyPassword().equals(password)) {
+					System.out.println(facultyBean.getFacultyName());
+					return facultyBean;
+				}
+
 			}
+		
 		}
-		}
+			
+		
+			
 		catch(Exception e)
 		{
 			System.out.println(e);
 		}
 		return null;
 	}
+
 	
 	//------------- Student Sign In ----------------------
 	
@@ -71,26 +81,16 @@ public class UserDAO {
 								
 			_sbList = sess.createQuery("from StudentBean ").list();	
 			
-
-			if(_sbList.size() == 1 && _sbList.get(0).getStudPassword().equals(password))
+			for(StudentBean studentBean : _sbList)
 			{
-				tc.commit();
-				return  _sbList.get(0);
-			}
-
-			System.out.println(_sbList);
-			
-			for(StudentBean studentBean : _sbList) {
 				if(studentBean.getStudId().equals(uname) && studentBean.getStudPassword().equals(password)){
 					System.out.println(studentBean.getStudId()+" "+studentBean.getStudName());
 					return studentBean;
 				}
 				return null;
 			}
-			}
-			
 		
-			
+	}
 		catch(Exception e){
 			System.out.println(e);
 		}
