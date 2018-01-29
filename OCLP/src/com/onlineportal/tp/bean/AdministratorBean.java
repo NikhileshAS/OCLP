@@ -1,16 +1,23 @@
 package com.onlineportal.tp.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "Admin")
 public class AdministratorBean {
 	
-	private int adminId;
+	@Id
+	private String adminId;
 	private String password;
 	private String emailId;
 	
 	
-	public int getAdminId() {
+	public String getAdminId() {
 		return adminId;
 	}
-	public void setAdminId(int adminId) {
+	public void setAdminId(String adminId) {
 		this.adminId = adminId;
 	}
 	
