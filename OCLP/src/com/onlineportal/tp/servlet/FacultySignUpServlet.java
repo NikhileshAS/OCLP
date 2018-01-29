@@ -20,11 +20,12 @@ import com.onlineportal.tp.dao.UserDAO;
  * Servlet implementation class FacultySignUpServlet
  */
 @WebServlet("/Home/FacultySignUpServlet")
-public class FacultySignUpServlet extends HttpServlet {
+public class FacultySignUpServlet extends HttpServlet
+{
 	private static final long serialVersionUID = 1L;
     private List<FacultyBean> _fbList = new LinkedList<FacultyBean>();	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
+    	System.out.println("Hiiiiiiiiiiiiii");
 			String userName = request.getParameter("username");
         	String id = "F_"+request.getParameter("facultyId");
         	String dept = request.getParameter("dept");
@@ -39,6 +40,7 @@ public class FacultySignUpServlet extends HttpServlet {
         	String email = request.getParameter("email");
         	String experience  = request.getParameter("exp");
         	String faculty_subject =request.getParameter("subject");
+        	String gender=request.getParameter("gender");
         	        	
         	_fbList.add(new FacultyBean());
         	_fbList.get(_fbList.size()-1).setFacultyName(userName);
@@ -54,15 +56,13 @@ public class FacultySignUpServlet extends HttpServlet {
         	_fbList.get(_fbList.size()-1).setExperience(experience);
         	_fbList.get(_fbList.size()-1).setFacultyPassword(id);
         	_fbList.get(_fbList.size()-1).setFaculty_subject(faculty_subject);
+        	_fbList.get(_fbList.size()-1).setGender(gender);
         	
         	
         	UserDAO daoObj = new UserDAO();
         	if(daoObj.facultyRegister(_fbList.get(_fbList.size()-1))){
         		response.sendRedirect("Login.jsp");
         	}
-        	
-        	
-        	
-    	}
+       }
 
 }

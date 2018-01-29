@@ -110,7 +110,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <h2 align="center" style="color:white">FACULTY  REGISTRATION  FORM</h2>
 <div class="w3ls-main">
 <div class="w3ls-form">
-<form action="FacultySignUpServlet" method="get" name = "FacultyRegisteration">
+<form action="FacultySignUpServlet" method="get" name ="FacultyRegisteration">
 <ul class="fields">
 	<li>	
 		<label class="w3ls-opt">Faculty name<span class="w3ls-star"> * </span></label>
@@ -129,8 +129,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<span class="w3ls-text w3ls-name">
 				<select name="gender">
 				<option>Select Gender</option>
-				<option>Male</option>
-				<option>Female</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
 				
 							
 				</select>
@@ -140,17 +140,17 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<label class="w3ls-opt">Department<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
 		     <select name="dept">
-		     <option>Select your department</option>
-		     <option>CSE</option>
-		     <option>IT</option>
-		     <option>ECE</option>
-		     <option>AUTO</option>
-		     <option>MECH</option>
-		     <option>ETE</option>
-		     <option>EIE</option>
-		     <option>EEE</option>
-		     <option>MCA</option>
-		     <option>MBA</option>
+		     <option value="none">Select your department</option>
+		     <option value="CSE">CSE</option>
+		     <option value="IT">IT</option>
+		     <option value="ECE">ECE</option>
+		     <option value="AUTO">AUTO</option>
+		     <option value="MECH">MECH</option>
+		     <option value="ETE">ETE</option>
+		     <option value="EIE">EIE</option>
+		     <option value="EEE">EEE</option>
+		     <option value="MCA">MCA</option>
+		     <option value="MBA">MBA</option>
 		     </select>
 			</span>
 	</li>
@@ -158,15 +158,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<label class="w3ls-opt">Subject<span class="w3ls-star"> * </span></label>	
 			<span class="w3ls-text w3ls-name">
 				 <select name="subject">
-		     <option>Select your subject</option>
-		     <option>Java</option>
-		     <option>C</option>
-		     <option>C++</option>
-		     <option>Aptitude</option>
-		     <option>Data Structure</option>
-		     <option>Computer Network</option>
-		     <option>Dbms</option>
-		     <option>Os</option>
+		     <option value="none">Select your subject</option>
+		     <option value="Java">Java</option>
+		     <option value="C">C</option>
+		     <option value="C++">C++</option>
+		     <option value="Aptitude">Aptitude</option>
+		     <option value="">Data Structure</option>
+		     <option value="Data Structure">Computer Network</option>
+		     <option value="Dbms">Dbms</option>
+		     <option value="Os">Os</option>
 		     </select>
 			</span>
 	</li>
@@ -191,44 +191,44 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				
 			</span>
 			<span class="w3ls-text w3ls-name">
-				<select>
-				<option>select state</option>
-				<option>Andhra Pradesh</option>
-<option>Arunachal Pradesh</option>
-<option>Assam</option>		
-<option>Bihar</option>
-<option>Chhattisgarh</option>
-<option>Goa</option>
-<option>Gujarat</option>
-<option>Haryana</option>
-<option>Himachal Pradesh</option>
-<option>Jammu and Kashmir</option>
-<option>Jharkhand</option>
-<option>Karnataka</option>
-<option>Kerala</option>
-<option>Madhya Pradesh</option>
-<option>Maharashtra</option>
-<option>Manipur</option>
-<option>Meghalaya</option>
-<option>Mizoram</option>
-<option>Nagaland</option>
-<option>Odisha</option>
-<option>Punjab</option>
-<option>Rajasthan</option>
-<option>Sikkim</option>
-<option>Tamil Nadu</option>
-<option>Telangana</option>
-<option>Tripura</option>
-<option>Uttarakhand</option>
-<option>Uttar Pradesh</option>
-<option>West Bengal</option>
-<option>Andaman and Nicobar Islands</option>
-<option>Chandigarh</option>
-<option>Dadra and Nagar Haveli</option>
-<option>Daman and Diu</option>
-<option>Delhi</option>
-<option>Lakshadweep</option>
-<option>Puducherry</option>
+				<select name="state">
+				<option value="none">select state</option>
+				<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>		
+<option value="Bihar">Bihar</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value=">Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Odisha">Odisha</option>
+<option value="Punjab">Punjab</option>
+<option value="Punjab">Punjab</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Telangana">Telangana</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="West Bengal">West Bengal</option>
+<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+<option value="Chandigarh">Chandigarh</option>
+<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+<option value="Daman and Diu">Daman and Diu</option>
+<option value="Delhi">Delhi</option>
+<option value="Lakshadweep">Lakshadweep</option>
+<option value="Puducherry">Puducherry</option>
 				</select>
 				
 			</span>
@@ -263,7 +263,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </ul>
 <div class="clear"></div>
 	<div class="w3ls-btn">
-		<input type="submit" value="submit" onclick="fun();"/>
+		<input type="submit" value="submit" />
 	</div>
 </form>
 </div>
