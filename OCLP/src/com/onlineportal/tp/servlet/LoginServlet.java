@@ -15,15 +15,12 @@ import com.onlineportal.tp.bean.AdministratorBean;
 import com.onlineportal.tp.bean.FacultyBean;
 import com.onlineportal.tp.bean.StudentBean;
 import com.onlineportal.tp.dao.UserDAO;
-
-/**
- * Servlet implementation class LoginServlet
- */
 @WebServlet("/Home/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 		
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
 		// TODO Auto-generated method stub
 		//PrintWriter out=response.getWriter();
 		//System.out.println("Hello");
@@ -68,7 +65,8 @@ public class LoginServlet extends HttpServlet {
 			}
 		}
 			
-		else if(loginId.startsWith("A_")) {
+		else if(loginId.startsWith("A_"))
+		{
 			AdministratorBean administratorBeanObj = dao.checkAdministratorSignIn(loginId, password);
 			if(administratorBeanObj != null) {
 				session.setAttribute("session", administratorBeanObj);

@@ -28,6 +28,7 @@ public class FacultyBean {
 	private String courseId;
 	private String testId;
 	private String faculty_subject;
+
 		
 	
 	public String getFaculty_subject() {
