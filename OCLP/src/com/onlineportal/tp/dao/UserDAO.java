@@ -43,28 +43,31 @@ public class UserDAO {
 		try{
 				
 		List<FacultyBean> _fbList = new LinkedList<FacultyBean>();
-<<<<<<< HEAD
 		_fbList = sess.createQuery("Select password from admin where rollno = :uname").list();	
 			if(_fbList.size() == 1 && _fbList.get(0).getFacultyPassword().equals(password))
 			{
 				tc.commit();
 				return  _fbList.get(0);
-=======
+			}
+				
 		_fbList = sess.createQuery("from FacultyBean").list();	
 			for(FacultyBean facultyBean: _fbList) {
 				if(facultyBean.getFacultyId().equals(uname) && facultyBean.getFacultyPassword().equals(password)) {
 					System.out.println(facultyBean.getFacultyName());
 					return facultyBean;
 				}
->>>>>>> branch 'master' of https://github.com/NikhileshAS/OCLP.git
+
 			}
-		}	
+			
+		}
+			
 		catch(Exception e)
 		{
 			System.out.println(e);
 		}
 		return null;
 	}
+
 	
 	//------------- Student Sign In ----------------------
 	
@@ -77,26 +80,28 @@ public class UserDAO {
 								
 			_sbList = sess.createQuery("from StudentBean ").list();	
 			
-<<<<<<< HEAD
+
 			if(_sbList.size() == 1 && _sbList.get(0).getStudPassword().equals(password))
 			{
 				tc.commit();
 				return  _sbList.get(0);
-=======
-			System.out.println(_sbList);
+			}
 			
-			for(StudentBean studentBean : _sbList) {
+			
+			for(StudentBean studentBean : _sbList)
+			{
 				if(studentBean.getStudId().equals(uname) && studentBean.getStudPassword().equals(password)){
 					System.out.println(studentBean.getStudId()+" "+studentBean.getStudName());
 					return studentBean;
 				}
 				return null;
->>>>>>> branch 'master' of https://github.com/NikhileshAS/OCLP.git
+
 			}
 			
 			
 		
-		}	
+		
+		}
 		catch(Exception e){
 			System.out.println(e);
 		}

@@ -76,19 +76,15 @@
     
   </head>
   <body>
+  <form name="upload" action="UploadServlet.java" method="get">
   <div class="w3-container w3-center w3-animate-bottom">
   <h1 align="center">START LEARNING!!!!!</h1>
-<<<<<<< HEAD
-=======
-  
   <%
-  	 
-  	FacultyBean facultyBean = (FacultyBean) request.getSession().getAttribute("session");
+  FacultyBean facultyBean=(FacultyBean) request.getSession().getAttribute("session");
   %>
   <h2>Welcome, <%= facultyBean.getFacultyName() %></h2>
-  	
- 
->>>>>>> branch 'master' of https://github.com/NikhileshAS/OCLP.git
+  
+  
  </div>
   <aside class="probootstrap-aside js-probootstrap-aside">
       <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
@@ -119,88 +115,113 @@
         <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
         <div class="probootstrap-main-site-logo"><a href="index.jsp">Aside</a></a></div>
       </div>
-      
       <div class="card-columns">
+      <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("Data Structure"))  %>
+      <% { %>
       <div class="card">
       <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/DS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    			<div class="text" style="color:white;font-size:20px;font-family:"Arial">Data Structures</div>
+    			<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="ds">Data Structures</div>
  			 	</div>
   			</div>
         </div>
+        <%} %>
+        
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("c"))  %>
+      <% { %>
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/c.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    		<div class="text" style="color:white;font-size:20px;font-family:"Arial">C</div>
+    		<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c">C</div>
   </div>
         </div>
         </div>
+        <% } %>
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("c++"))  %>
+      <% { %>
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/C++.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial">C++</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c++">C++</div>
   </div>
         </div>
         </div>
+        <%} %>
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("OS"))  %>
+      <% { %>
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/OS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial">Operating System</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" nmae="os">Operating System</div>
   </div>
         </div>
         </div>
+        <%} %>
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("java"))  %>
+      <% { %>
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/java.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial">Java</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="java">Java</div>
   </div>
         </div>
         </div>
+        <%} %>
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("Computer Network"))  %>
+      <% { %>
+        
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/CN.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial">Computer Network</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="CN">Computer Network</div>
   </div>
         </div>
         </div>
+        <% } %>
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("DBMS"))  %>
+      <% { %>
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/DBMS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial">DBMS</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="DBMS">DBMS</div>
   </div>
         </div>
         </div>
+        <% } %>
+        <% if(facultyBean.getFaculty_subject().equalsIgnoreCase("Aptitude"))  %>
+      <% { %>
         <div class="card">
         <div class="container">
-          <a href="single.jsp">
+          <a href="uploadfiles.jsp">
             <img class="card-img-top probootstrap-animate" src="images/APTITUDE.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial">Aptitude</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="apti">Aptitude</div>
   </div>
         </div>
         </div>
+        <%} %>
 	<div class="container-fluid d-md-none">
         <div class="row">
           <div class="col-md-12">
@@ -222,5 +243,6 @@
     <script src="js/imagesloaded.pkgd.min.js"></script>
     <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/main.js"></script>
+</form>
 </body>
 </html>
