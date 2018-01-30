@@ -85,7 +85,7 @@
   	 
   	FacultyBean facultyBean = (FacultyBean) request.getSession().getAttribute("session");
   %>
-  <h2>Welcome, <%= facultyBean.getFacultyName() %></h2>
+  <h2 align="center">Welcome, <%= facultyBean.getFacultyName() %></h2>
  <% String sub = facultyBean.getFaculty_subject(); %>
  
 

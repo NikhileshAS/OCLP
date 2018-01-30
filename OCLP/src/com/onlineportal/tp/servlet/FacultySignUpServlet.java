@@ -25,7 +25,6 @@ public class FacultySignUpServlet extends HttpServlet
 	private static final long serialVersionUID = 1L;
     private List<FacultyBean> _fbList = new LinkedList<FacultyBean>();	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	System.out.println("Hiiiiiiiiiiiiii");
 			String userName = request.getParameter("username");
         	String id = "F_"+request.getParameter("facultyId");
         	String dept = request.getParameter("dept");
