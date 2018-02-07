@@ -12,8 +12,8 @@
 		<property name="hibernate.connection.url">
 			jdbc:oracle:thin:@localhost:1521:xe 
 		</property>
-		<property name="hibernate.connection.username">oracle</property>
-		<property name="hibernate.connection.password">oracle</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.connection.password">nikhi3896</property>
 		<!-- Echo all executed SQL to stdout -->
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
@@ -22,5 +22,6 @@
 		<mapping class="com.onlineportal.tp.bean.FacultyBean" />
 		<mapping class="com.onlineportal.tp.bean.StudentBean" />
 		<mapping class="com.onlineportal.tp.bean.AdministratorBean" />
+		<mapping class="com.onlineportal.tp.bean.DiscussionBean" />
 	</session-factory>
 </hibernate-configuration>

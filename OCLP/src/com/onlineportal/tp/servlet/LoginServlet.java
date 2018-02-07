@@ -28,12 +28,12 @@ public class LoginServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		HttpSession session = request.getSession(true);
 		String successDestination = "../Faculty/Home.jsp";
-		String failureDestination = "Login.jsp";
-		String empty = "empty";
 		
 		try{
 		UserDAO dao = new UserDAO();
-		if(loginId.startsWith("S_")) {
+	
+		if(loginId.startsWith("S_"))
+		{
 			StudentBean stud = dao.checkStudentSignIn(loginId, password);
 			if(stud != null) {
 				session.setAttribute("session", stud);
@@ -41,16 +41,18 @@ public class LoginServlet extends HttpServlet {
 				response.sendRedirect(successDestination);
 			}
 			else {
-				session.setAttribute("session", empty);
-				//getServletContext().getRequestDispatcher(failureDestination).forward(request, response);;
-				response.sendRedirect(failureDestination);
+				//session.invalidate();
+				session.setAttribute("session", "invalid");
+				response.sendRedirect("Login.jsp");
 			}
 		}
 		
-		else if(loginId.startsWith("F_")) {
+		else if(loginId.startsWith("F_"))
+		{
 			FacultyBean facultyBeanObj = dao.checkFacultySignIn(loginId, password);
 			
-			if(facultyBeanObj != null) {
+			if(facultyBeanObj != null) 
+			{
 				session.setAttribute("session", facultyBeanObj);
 				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
 				response.sendRedirect(successDestination);
@@ -58,10 +60,9 @@ public class LoginServlet extends HttpServlet {
 			}
 			else
 			{
-				session.setAttribute("session", empty);
-				//getServletContext().getRequestDispatcher(failureDestination).forward(request, response);;
-				response.sendRedirect(failureDestination);
-
+				//session.invalidate();
+				session.setAttribute("session", "invalid");
+				response.sendRedirect("Login.jsp");
 			}
 		}
 			
@@ -70,19 +71,18 @@ public class LoginServlet extends HttpServlet {
 			AdministratorBean administratorBeanObj = dao.checkAdministratorSignIn(loginId, password);
 			if(administratorBeanObj != null) {
 				session.setAttribute("session", administratorBeanObj);
+				
 				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
 				response.sendRedirect(successDestination);
 
 			}
 			else
 			{
-				session.setAttribute("session", empty);
-				//getServletContext().getRequestDispatcher(failureDestination).forward(request, response);;
-				response.sendRedirect(failureDestination);
-
-			}
+				//session.invalidate();
+				session.setAttribute("session", "invalid");
+				response.sendRedirect("Login.jsp");
+				}
 		}
-				
 		}
 		catch(Exception e){
 			System.out.println(e);

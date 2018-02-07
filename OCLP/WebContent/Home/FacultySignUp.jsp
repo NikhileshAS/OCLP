@@ -155,20 +155,27 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</span>
 	</li>
 	<li>
-		<label class="w3ls-opt">Subject<span class="w3ls-star"> * </span></label>	
+		<label class="w3ls-opt">Select your courses<span class="w3ls-star"> * </span></label><br>
 			<span class="w3ls-text w3ls-name">
-				 <select name="subject">
-		     <option value="none">Select your subject</option>
-		     <option value="Java">Java</option>
-		     <option value="C">C</option>
-		     <option value="C++">C++</option>
-		     <option value="Aptitude">Aptitude</option>
-		     <option value="">Data Structure</option>
-		     <option value="Data Structure">Computer Network</option>
-		     <option value="Dbms">Dbms</option>
-		     <option value="Os">Os</option>
-		     </select>
-			</span>
+		     <table>
+		     <tr>
+		     <td><input type="checkbox" name="course" value="Java">Java</td>
+		     <td><input type="checkbox" name="course" value="C">C</td>
+		     </tr>
+		     <tr>
+		     <td><input type="checkbox" name="course" value="C++">C++</td>
+		     <td><input type="checkbox" name="course" value="Aptitude">General Aptitude</td>
+		     </tr>
+		     <tr>
+		     <td><input type="checkbox" name="course" value="Data Structures">Data Structures</td>
+		     <td><input type="checkbox" name="course" value="Computer Networks">Computer Networks</td>
+		     </tr>
+		     <tr>
+		     <td><input type="checkbox" name="course" value="DBMS">DBMS</td>
+		     <td><input type="checkbox" name="course" value="OS">OS</td>
+		     </tr>
+		     </table></span>
+			
 	</li>
 	<li>
 	<input type="date" name="dateofbirth" id="dateofbirth">

@@ -59,9 +59,7 @@
           </div>
         </div>
       </nav>
-      
-      
-       <script src="js/scripts.min.js"></script>
+     <script src="js/scripts.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="js/custom.js"></script>
       </div>
@@ -93,12 +91,19 @@
 
 
  <h3 style="font-family: sans-serif;;font-weight:bold;color:navy;">SIGN-IN</h3>
- 
- // Mugil will do
- 
- 
- 
+<%
+try{
+	
+	if(request.getSession().getAttribute("session")!=null){
+		out.println("<h5>Invalid username or password</h5>");
 
+	}
+	}
+catch(Exception e){
+	e.printStackTrace();
+}
+	
+%>
 <div class="main-agileinfo">
 	
 	<div class="videologin">
@@ -136,6 +141,7 @@
 	</div>	
 	<div class="clear"></div>
 </div>	
+
 </body>
 </html>
       
