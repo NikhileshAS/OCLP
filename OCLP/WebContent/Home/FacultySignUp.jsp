@@ -199,7 +199,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</span>
 			<span class="w3ls-text w3ls-name">
 				<select name="state">
-				<option value="none">select state</option>
+				<option value="none">Select State *</option>
 				<option value="Andhra Pradesh">Andhra Pradesh</option>
 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
 <option value="Assam">Assam</option>		

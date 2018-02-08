@@ -27,15 +27,16 @@ public class FacultyBean {
 	private String pincode;
 	private String courseId;
 	private String testId;
-	private String faculty_subject;
+	private String coursesEnrolled[];
 
 		
 	
-	public String getFaculty_subject() {
-		return faculty_subject;
+	
+	public String[] getCoursesEnrolled() {
+		return coursesEnrolled;
 	}
-	public void setFaculty_subject(String faculty_subject) {
-		this.faculty_subject = faculty_subject;
+	public void setCoursesEnrolled(String[] coursesEnrolled) {
+		this.coursesEnrolled = coursesEnrolled;
 	}
 	public String getFacultyId() {
 		return facultyId;

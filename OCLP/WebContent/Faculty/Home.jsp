@@ -85,7 +85,7 @@
   %>
 
   <h2 align="center">Welcome, <%= facultyBean.getFacultyName() %></h2>
- <% String sub = facultyBean.getFaculty_subject(); %>
+ <% String[] courses = facultyBean.getCoursesEnrolled(); %>
  
 
  </div>
@@ -120,7 +120,9 @@
       </div>
       <div class="card-columns">
 
-      <% if(sub.equalsIgnoreCase("Data Structure"))  {%>
+      <%try{
+      	for(String sub: courses){
+      	if(sub.equalsIgnoreCase("Data Structure"))  {%>
 
       <div class="card">
       <div class="container">
@@ -233,7 +235,13 @@
   </div>
         </div>
         </div>
-        <%} %>
+        <%}
+      	}
+      	
+      	}catch(NullPointerException e){
+      		e.printStackTrace();
+      	}
+      	 %>
         <div class="container-fluid d-md-none">
         <div class="row">
           <div class="col-md-12">
