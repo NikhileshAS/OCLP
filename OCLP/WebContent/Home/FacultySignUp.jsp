@@ -155,26 +155,25 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</span>
 	</li>
 	<li>
-		<label class="w3ls-opt">Select your courses<span class="w3ls-star"> * </span></label><br>
-			<span class="w3ls-text w3ls-name">
+		<label class="w3ls-opt">Select courses<span class="w3ls-star"> * </span></label>
 		     <table>
 		     <tr>
-		     <td><input type="checkbox" name="course" value="Java">Java</td>
-		     <td><input type="checkbox" name="course" value="C">C</td>
+		     <td><input type="checkbox" name="course" value="Java ">Java</td>
+		     <td><input type="checkbox" name="course" value="C ">C</td>
 		     </tr>
 		     <tr>
-		     <td><input type="checkbox" name="course" value="C++">C++</td>
-		     <td><input type="checkbox" name="course" value="Aptitude">General Aptitude</td>
+		     <td><input type="checkbox" name="course" value="C++ ">C++</td>
+		     <td><input type="checkbox" name="course" value="Aptitude ">General Aptitude</td>
 		     </tr>
 		     <tr>
-		     <td><input type="checkbox" name="course" value="Data Structures">Data Structures</td>
-		     <td><input type="checkbox" name="course" value="Computer Networks">Computer Networks</td>
+		     <td><input type="checkbox" name="course" value="DataStructures ">Data Structures</td>
+		     <td><input type="checkbox" name="course" value="ComputerNetworks ">Computer Networks</td>
 		     </tr>
 		     <tr>
-		     <td><input type="checkbox" name="course" value="DBMS">DBMS</td>
-		     <td><input type="checkbox" name="course" value="OS">OS</td>
+		     <td><input type="checkbox" name="course" value="DBMS ">DBMS</td>
+		     <td><input type="checkbox" name="course" value="OS ">OS</td>
 		     </tr>
-		     </table></span>
+		     </table>
 			
 	</li>
 	<li>

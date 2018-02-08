@@ -82,10 +82,15 @@
   
   <%
   FacultyBean facultyBean=(FacultyBean) request.getSession().getAttribute("session");
+  
   %>
 
   <h2 align="center">Welcome, <%= facultyBean.getFacultyName() %></h2>
- <% String[] courses = facultyBean.getCoursesEnrolled(); %>
+ <% try{
+ 	String subs = facultyBean.getCoursesEnrolled();
+ 	String[] courses = subs.split(" ");
+ 	System.out.print(courses);
+ %>
  
 
  </div>
@@ -120,9 +125,9 @@
       </div>
       <div class="card-columns">
 
-      <%try{
+      <%
       	for(String sub: courses){
-      	if(sub.equalsIgnoreCase("Data Structure"))  {%>
+      	if(sub.equalsIgnoreCase("DataStructures"))  {%>
 
       <div class="card">
       <div class="container">
@@ -137,7 +142,7 @@
         <%} %>
         
       
-         <% if(sub.equalsIgnoreCase("c")) { %>
+         <% if(sub.equalsIgnoreCase("C")) { %>
         <div class="card">
         <div class="container">
           <a href="uploadfiles.jsp">
@@ -151,7 +156,7 @@
         <% } %>
 
         
-         <% if(sub.equalsIgnoreCase("c++"))  {%>
+         <% if(sub.equalsIgnoreCase("C++"))  {%>
     
         <div class="card">
         <div class="container">
@@ -179,7 +184,7 @@
         </div>
         <%} %>
 
-         <% if(sub.equalsIgnoreCase("java"))  { %>
+         <% if(sub.equalsIgnoreCase("Java"))  { %>
      
         <div class="card">
         <div class="container">
@@ -193,7 +198,7 @@
         </div>
 <% } %>       
         
-         <% if(sub.equalsIgnoreCase("Computer Network")) { %>
+         <% if(sub.equalsIgnoreCase("ComputerNetworks")) { %>
     
         <div class="card">
         <div class="container">
@@ -208,7 +213,7 @@
         <% } %>
 
         
-         <% if(sub.equalsIgnoreCase("dbms"))  { %>
+         <% if(sub.equalsIgnoreCase("DBMS"))  { %>
      
         <div class="card">
         <div class="container">
@@ -239,7 +244,7 @@
       	}
       	
       	}catch(NullPointerException e){
-      		e.printStackTrace();
+      		response.sendRedirect("../Home/Login.jsp");
       	}
       	 %>
         <div class="container-fluid d-md-none">

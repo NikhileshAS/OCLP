@@ -94,7 +94,7 @@
 <%
 try{
 	
-	if(request.getSession().getAttribute("session")!=null){
+	if(request.getSession().getAttribute("session").equals("invalid")){
 		out.println("<h5>Invalid username or password</h5>");
 
 	}

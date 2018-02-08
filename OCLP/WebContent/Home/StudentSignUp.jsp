@@ -103,7 +103,18 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../Signup/css/style.css" rel="stylesheet" type="text/css" media="all"/><!--style_sheet-->
 <link href="//fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"><!--online_fonts-->
 <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet"><!--online_fonts-->
+
 <link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><!--online_fonts-->
+<script>
+function fun()
+{
+	var rollno1=document.getElementById("rollno").value
+	window.alert("Registration Successfull!!!!!");
+	
+     window.alert("Your UserName=S_"+rollno1 );
+     window.alert("Your Password=S_"+rollno1);
+	}
+</script>
 </head>
 <body>
 
@@ -121,7 +132,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<li>
 		<label class="w3ls-opt">RollNo<span class="w3ls-star"> * </span></label>
 		<div class="w3ls-name">
-			<input type="text" name="rollno" placeholder="rollno" required=""/>
+			<input type="text" id="rollno" name="rollno" placeholder="rollno" required=""/>
 		</div>
 	</li>
 	
@@ -248,7 +259,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </ul>
 <div class="clear"></div>
 	<div class="w3ls-btn">
-		<input type="submit" value="submit"/>
+		<input type="submit" value="submit" onclick="fun();" />
 	</div>
 </form>
 </div>

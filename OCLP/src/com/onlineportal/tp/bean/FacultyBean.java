@@ -1,6 +1,7 @@
 package com.onlineportal.tp.bean;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -27,15 +28,16 @@ public class FacultyBean {
 	private String pincode;
 	private String courseId;
 	private String testId;
-	private String coursesEnrolled[];
+	@Column (length = 500)
+	private String coursesEnrolled;
 
 		
 	
 	
-	public String[] getCoursesEnrolled() {
+	public String getCoursesEnrolled() {
 		return coursesEnrolled;
 	}
-	public void setCoursesEnrolled(String[] coursesEnrolled) {
+	public void setCoursesEnrolled(String coursesEnrolled) {
 		this.coursesEnrolled = coursesEnrolled;
 	}
 	public String getFacultyId() {

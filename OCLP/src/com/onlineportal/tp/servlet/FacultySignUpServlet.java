@@ -79,10 +79,18 @@ public class FacultySignUpServlet extends HttpServlet
         	String email = request.getParameter("email");
 
         	String experience  = request.getParameter("exp");
+        	System.out.println(experience);
+        	String[] subs = request.getParameterValues("course");
 
-        	String[] courses = request.getParameterValues("courses");
-
+        	String courses = "";
+        	
+        	for(String s : subs) {
+        		courses += s;
+        	}
+        	
         	String gender=request.getParameter("gender");
+        	
+        	System.out.println(courses);
 
         	        	
 
@@ -111,7 +119,7 @@ public class FacultySignUpServlet extends HttpServlet
 
         	facultyBean.setFacultyPassword(id);
 
-        	facultyBean.setCoursesEnrolled(courses);
+        	facultyBean.setCoursesEnrolled(courses.toString());
 
         	facultyBean.setGender(gender);
 
