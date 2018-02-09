@@ -9,7 +9,7 @@
 <body>
 <h1><p align="center"> UPLOAD YOUR  FILES!!!!!</p></h1>
 
-<form action="myform.cgi" align="center"> 
+<form action="BookServlet" align="center"> 
 	<input type="file" name="fileupload" value="fileupload" id="fileupload">
  		<label for="fileupload"> <br> </label> 
  		<input type="submit" value="submit">
