@@ -4,11 +4,13 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.onlineportal.tp.bean.AdministratorBean;
+import com.onlineportal.tp.bean.BookBean;
 import com.onlineportal.tp.bean.FacultyBean;
 import com.onlineportal.tp.bean.StudentBean;
 import com.onlineportal.tp.util.HibernateUtil;
 
-public class UserDAO {
+public class UserDAO
+{
 	private Session sess = HibernateUtil.getSessionFactory().openSession();
 	@SuppressWarnings({ "unchecked" })
 	//-------- Admin Sign in---------------------
@@ -116,4 +118,21 @@ public class UserDAO {
 		}
 		return false;
 	}
+	
+	public boolean uploadBook(BookBean bookBeanObject)
+	{
+		Transaction tc=sess.beginTransaction();
+		try
+		{
+			sess.save(bookBeanObject);
+			tc.commit();
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return false;
+	}
 }
+

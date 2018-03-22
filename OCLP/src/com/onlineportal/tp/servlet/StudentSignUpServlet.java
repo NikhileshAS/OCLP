@@ -7,7 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,12 +19,9 @@ import com.onlineportal.tp.bean.StudentBean;
 import com.onlineportal.tp.dao.UserDAO;
 
 import sun.rmi.runtime.Log;
-
-/**
- * Servlet implementation class StudentSignUpServlet
- */
 @WebServlet("/Home/StudentSignUpServlet")
-public class StudentSignUpServlet extends HttpServlet {
+public class StudentSignUpServlet extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
 	protected List<StudentBean> _sbList = new LinkedList<StudentBean>();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

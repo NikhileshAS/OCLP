@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
   <style>
-  [type="date"] {
+  [type="date"] 
+ {
   background: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
 }
 [type="date"]::-webkit-inner-spin-button 
@@ -104,6 +105,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet"><!--online_fonts-->
 <link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet"><!--online_fonts-->
 <script>
+function fun()
+{
+	var rollno=document.getElementById("facultyId").value
+	window.alert("registration Successfull!!!!!");
+	window.alert("Your UserName=F_"+facultyId);
+	window.alert("Your Password=F_"+facultyId);
+	
+	}
 </script>
 </head>
 <body>
@@ -121,7 +130,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<li>
 		<label class="w3ls-opt">FacultyId<span class="w3ls-star"> * </span></label>
 		<div class="w3ls-name">
-			<input type="text" name="facultyId" placeholder="FacultyId" required="required"/>
+			<input type="text" name="facultyId" id="facultyId" placeholder="FacultyId" required="required"/>
 		</div>
 	</li>
 	<li>
@@ -269,7 +278,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </ul>
 <div class="clear"></div>
 	<div class="w3ls-btn">
-		<input type="submit" value="submit" />
+		<input type="submit" value="submit" onclick="fun();"/>
 	</div>
 </form>
 </div>

@@ -7,14 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><p align="center"> UPLOAD YOUR  FILES!!!!!</p></h1>
-
-<form action="BookServlet" align="center"> 
+<h1><p align="center"> UPLOAD YOUR <%=request.getParameter("userId") %> FILES HERE!!!!!</p></h1>
+<%
+    session.setAttribute("user", request.getParameter("userId"));
+ %>
+ <% 
+ ServletContext context=getServletContext();  
+context.setAttribute("user", request.getParameter("userId"));  
+%>
+<form  action="BookServlet" align="center" enctype="multipart/form-data">
+ 
 	<input type="file" name="fileupload" value="fileupload" id="fileupload">
- 		<label for="fileupload"> <br> </label> 
- 		<input type="submit" value="submit">
+ 		
+ 		<input type="submit" value="submit" >
  </form>
-
-
 </body>
 </html>

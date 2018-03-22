@@ -1,8 +1,5 @@
 
-
 package com.onlineportal.tp.servlet;
-
-
 
 import java.io.IOException;
 
@@ -34,13 +31,6 @@ import com.onlineportal.tp.bean.FacultyBean;
 
 import com.onlineportal.tp.dao.UserDAO;
 
-
-
-/**
-
- * Servlet implementation class FacultySignUpServlet
-
- */
 
 @WebServlet("/Home/FacultySignUpServlet")
 
@@ -84,17 +74,14 @@ public class FacultySignUpServlet extends HttpServlet
 
         	String courses = "";
         	
-        	for(String s : subs) {
+        	for(String s : subs) 
+        	{
         		courses += s;
         	}
         	
         	String gender=request.getParameter("gender");
-        	
         	System.out.println(courses);
 
-        	        	
-
-        	
         	facultyBean.setFacultyName(userName);
 
         	facultyBean.setFacultyId(id);
@@ -122,18 +109,13 @@ public class FacultySignUpServlet extends HttpServlet
         	facultyBean.setCoursesEnrolled(courses.toString());
 
         	facultyBean.setGender(gender);
-
         	
+             UserDAO daoObj = new UserDAO();
 
-        	
-
-        	UserDAO daoObj = new UserDAO();
-
-        	if(daoObj.facultyRegister(facultyBean)){
-
-        		response.sendRedirect("Login.jsp");
-
-        	}
+        	if(daoObj.facultyRegister(facultyBean))
+        	{
+           response.sendRedirect("Login.jsp");
+            }
 
        }
 

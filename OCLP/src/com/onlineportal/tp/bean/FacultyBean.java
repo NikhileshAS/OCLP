@@ -1,6 +1,8 @@
 package com.onlineportal.tp.bean;
 
 
+import java.sql.Blob;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -142,6 +144,4 @@ public class FacultyBean {
 	public void setFacultyPassword(String facultyPassword) {
 		this.facultyPassword = facultyPassword;
 	}
-
-
 }

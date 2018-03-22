@@ -126,30 +126,33 @@
       <div class="card-columns">
 
       <%
-      	for(String sub: courses){
-      	if(sub.equalsIgnoreCase("DataStructures"))  {%>
+      	for(String sub: courses)
+      	{
+      	if(sub.equalsIgnoreCase("DataStructures")) { %>
 
       <div class="card">
       <div class="container">
-          <a href="uploadfiles.jsp">
+           <a href="uploadfiles.jsp?userId=${"DataStructures"}" /a>
+          
             <img class="card-img-top probootstrap-animate" src="images/DS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    			<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="ds">Data Structures</div>
+    			<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="ds" id="DataStructures">Data Structures</div>
  			 	</div>
   			</div>
         </div>
-        <%} %>
+         
+        <% } %>
         
       
          <% if(sub.equalsIgnoreCase("C")) { %>
         <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+           <a href="uploadfiles.jsp?userId=${"C"}" /a>
             <img class="card-img-top probootstrap-animate" src="images/c.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    		<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c">C</div>
+    		<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c"  id="c" value="c">C</div>
   </div>
         </div>
         </div>
@@ -160,11 +163,11 @@
     
         <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+         <a href="uploadfiles.jsp?userId=${"C++"}" /a> 
             <img class="card-img-top probootstrap-animate" src="images/C++.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c++">C++</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c++" id="c++">C++</div>
   </div>
         </div>
         </div>
@@ -172,78 +175,91 @@
        
          <% if(sub.equalsIgnoreCase("OS"))  {%>
     
+        
         <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+         <a href="uploadfiles.jsp?userId=${"OS"}" /a>
+         
             <img class="card-img-top probootstrap-animate" src="images/OS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="os">Operating System</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="os" id="os">Operating System</div>
   </div>
         </div>
         </div>
+      
         <%} %>
 
          <% if(sub.equalsIgnoreCase("Java"))  { %>
      
         <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+          <a href="uploadfiles.jsp?userId=${"Java"}" /a>
+         
+         
             <img class="card-img-top probootstrap-animate" src="images/java.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="java">Java</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="java" id="java">Java</div>
   </div>
         </div>
         </div>
+      
 <% } %>       
         
          <% if(sub.equalsIgnoreCase("ComputerNetworks")) { %>
     
         <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+          <a href="uploadfiles.jsp?userId=${"ComputerNetworks"}" /a>
             <img class="card-img-top probootstrap-animate" src="images/CN.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="CN">Computer Network</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="CN" id="ComputerNetworks">Computer Network</div>
   </div>
         </div>
         </div>
+        
         <% } %>
 
         
          <% if(sub.equalsIgnoreCase("DBMS"))  { %>
+         
+        
      
         <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+       
+          <a href="uploadfiles.jsp?userId=${"DBMS"}" /a>
             <img class="card-img-top probootstrap-animate" src="images/DBMS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="DBMS">DBMS</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="DBMS" id="DBMS">DBMS</div>
   </div>
         </div>
         </div>
+         
         <% } %>
 
         
          <% if(sub.equalsIgnoreCase("Aptitude"))  {%>
-     
-        <div class="card">
+          <div class="card">
         <div class="container">
-          <a href="uploadfiles.jsp">
+        <a href="uploadfiles.jsp?userId=${"Aptitude"}" /a>
+          
             <img class="card-img-top probootstrap-animate" src="images/APTITUDE.jpg" alt="Card image cap" data-animate-effect="fadeIn">
           </a>
            <div class="overlay">
-    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="apti">Aptitude</div>
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="apti" id="Aptitude">Aptitude</div>
   </div>
         </div>
         </div>
+        
         <%}
       	}
       	
-      	}catch(NullPointerException e){
+      	}catch(NullPointerException e)
+ {
       		response.sendRedirect("../Home/Login.jsp");
       	}
       	 %>
