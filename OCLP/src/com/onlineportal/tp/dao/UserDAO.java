@@ -4,14 +4,17 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.onlineportal.tp.bean.AdministratorBean;
-import com.onlineportal.tp.bean.BookBean;
+import com.onlineportal.tp.bean.AssessmentBean;
 import com.onlineportal.tp.bean.FacultyBean;
 import com.onlineportal.tp.bean.StudentBean;
+import com.onlineportal.tp.service.EmailDispatcher;
 import com.onlineportal.tp.util.HibernateUtil;
 
-public class UserDAO
-{
+public class UserDAO {
 	private Session sess = HibernateUtil.getSessionFactory().openSession();
+	
+	private EmailDispatcher emailDispatcher = new EmailDispatcher();
+
 	@SuppressWarnings({ "unchecked" })
 	//-------- Admin Sign in---------------------
 	public AdministratorBean checkAdministratorSignIn(String uname,String password )
@@ -26,7 +29,8 @@ public class UserDAO
 			for(AdministratorBean administratorBean : _abList) {
 				if(administratorBean.getAdminId().equals(uname) && administratorBean.getPassword().equals(password)) {
 				System.out.println(administratorBean.getAdminId());
-					return administratorBean;
+				sess.close();
+				return administratorBean;
 				}
 			}
 	 }	
@@ -48,6 +52,7 @@ public class UserDAO
 		tc.commit();
 		for(FacultyBean facultyBean : _fbList) {
 				if(facultyBean.getFacultyId().equals(uname) && facultyBean.getFacultyPassword().equals(password)) {
+					sess.close();
 					return facultyBean;
 				}
 
@@ -77,6 +82,7 @@ public class UserDAO
 			{
 				if(studentBean.getStudId().equals(uname) && studentBean.getStudPassword().equals(password)){
 					System.out.println(studentBean.getStudId()+" "+studentBean.getStudName());
+					sess.close();
 					return studentBean;
 				}
 				return null;
@@ -95,7 +101,9 @@ public class UserDAO
 		Transaction tc = sess.beginTransaction();
 		try{
 			sess.save(studentBeanObject);
-			tc.commit();
+			emailDispatcher.sendEmail(studentBeanObject.getEmailId(),"Here is your authentication details: \n User Name: "+studentBeanObject.getStudId()+"\n Password: "+ studentBeanObject.getStudPassword());
+			sess.getTransaction().commit();
+			sess.close();
 			return true;
 		}
 		catch(Exception e){
@@ -110,7 +118,11 @@ public class UserDAO
 		Transaction tc = sess.beginTransaction();
 		try{
 			sess.save(facultyBeanObject);
-			tc.commit();
+			
+			System.out.println(facultyBeanObject.getEmailId()+" "+facultyBeanObject.getFacultyPassword());
+			emailDispatcher.sendEmail(facultyBeanObject.getEmailId(), "Here is your authentication details: \n User Name: "+facultyBeanObject.getFacultyId()+"\n Password: "+facultyBeanObject.getFacultyPassword());
+			sess.getTransaction().commit();
+			sess.close();
 			return true;
 		}
 		catch(Exception e){
@@ -119,20 +131,18 @@ public class UserDAO
 		return false;
 	}
 	
-	public boolean uploadBook(BookBean bookBeanObject)
-	{
-		Transaction tc=sess.beginTransaction();
-		try
-		{
-			sess.save(bookBeanObject);
-			tc.commit();
+	public boolean addAssessment(AssessmentBean assessment) {
+		Transaction tc = sess.beginTransaction();
+		try {
+			sess.save(assessment);
+			sess.getTransaction().commit();
+			sess.close();
 			return true;
 		}
-		catch(Exception e)
-		{
-			System.out.println(e);
+		catch(Exception e) {
+			e.printStackTrace();
 		}
 		return false;
+		
 	}
 }
-
