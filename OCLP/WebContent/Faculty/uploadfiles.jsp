@@ -18,8 +18,7 @@ context.setAttribute("user", request.getParameter("userId"));
 %>
 <form  action="BookServlet" align="center" enctype="multipart/form-data">
  
-=======
-<<<<<<< HEAD
+
    <% if(request.getSession().getAttribute("session") != null){
 	   %>
 	   <form action = "LogoutServlet"name = "logoutButton" method="post">
@@ -29,19 +28,18 @@ context.setAttribute("user", request.getParameter("userId"));
 <h1><p align="center"> UPLOAD YOUR  FILES!!!!!</p></h1>
 
 <form action="myform.cgi" align="center"> 
-=======
+
 <h1><p align="center"> UPLOAD YOUR <%=request.getParameter("userId") %> FILES HERE!!!!!</p></h1>
 <%
     session.setAttribute("user", request.getParameter("userId"));
  %>
  <% 
- ServletContext context=getServletContext();  
+ 
 context.setAttribute("user", request.getParameter("userId"));  
 %>
 <form  action="BookServlet" align="center" enctype="multipart/form-data">
  
->>>>>>> refs/remotes/origin/master
->>>>>>> 868137b All To Rebase
+
 	<input type="file" name="fileupload" value="fileupload" id="fileupload">
  		
  		<input type="submit" value="submit" >

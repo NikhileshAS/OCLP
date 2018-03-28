@@ -1,4 +1,3 @@
-<<<<<<< Upstream, based on branch 'master' of https://github.com/NikhileshAS/OCLP.git
 package com.onlineportal.tp.bean;
 
 public class Question {
@@ -51,7 +50,6 @@ public class Question {
 	
 
 }
-=======
 package com.onlineportal.tp.bean;
 
 public class Question {
@@ -104,4 +102,3 @@ public class Question {
 	
 
 }
->>>>>>> 868137b All To Rebase
