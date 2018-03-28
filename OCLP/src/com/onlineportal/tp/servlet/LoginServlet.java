@@ -22,8 +22,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		// TODO Auto-generated method stub
-		//PrintWriter out=response.getWriter();
-		//System.out.println("Hello");
+		
 		String loginId=request.getParameter("userName");
 		String password=request.getParameter("password");
 		HttpSession session = request.getSession(true);
@@ -37,11 +36,9 @@ public class LoginServlet extends HttpServlet {
 			StudentBean stud = dao.checkStudentSignIn(loginId, password);
 			if(stud != null) {
 				session.setAttribute("session", stud);
-				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
 				response.sendRedirect(successDestination);
 			}
 			else {
-				//session.invalidate();
 				session.setAttribute("session", "invalid");
 				response.sendRedirect("Login.jsp");
 			}
@@ -54,13 +51,11 @@ public class LoginServlet extends HttpServlet {
 			if(facultyBeanObj != null) 
 			{
 				session.setAttribute("session", facultyBeanObj);
-				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
 				response.sendRedirect(successDestination);
 
 			}
 			else
 			{
-				//session.invalidate();
 				session.setAttribute("session", "invalid");
 				response.sendRedirect("Login.jsp");
 			}
@@ -71,14 +66,11 @@ public class LoginServlet extends HttpServlet {
 			AdministratorBean administratorBeanObj = dao.checkAdministratorSignIn(loginId, password);
 			if(administratorBeanObj != null) {
 				session.setAttribute("session", administratorBeanObj);
-				
-				//getServletContext().getRequestDispatcher(successDestination).forward(request, response);
 				response.sendRedirect(successDestination);
 
 			}
 			else
 			{
-				//session.invalidate();
 				session.setAttribute("session", "invalid");
 				response.sendRedirect("Login.jsp");
 				}
