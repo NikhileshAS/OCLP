@@ -130,6 +130,7 @@ public class UserDAO {
 		}
 		return false;
 	}
+<<<<<<< Upstream, based on branch 'master' of https://github.com/NikhileshAS/OCLP.git
 	//------add assessment-------
 	public boolean addAssessment(AssessmentBean assessment) {
 		Transaction tc = sess.beginTransaction();
@@ -146,3 +147,21 @@ public class UserDAO {
 		
 	}
 }
+=======
+	
+	public boolean addAssessment(AssessmentBean assessment) {
+		Transaction tc = sess.beginTransaction();
+		try {
+			sess.save(assessment);
+			sess.getTransaction().commit();
+			sess.close();
+			return true;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+		
+	}
+}
+>>>>>>> be9951d AddAssessment
