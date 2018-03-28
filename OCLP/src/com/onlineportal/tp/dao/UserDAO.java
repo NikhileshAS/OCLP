@@ -130,7 +130,7 @@ public class UserDAO {
 		}
 		return false;
 	}
-	
+	//------add assessment-------
 	public boolean addAssessment(AssessmentBean assessment) {
 		Transaction tc = sess.beginTransaction();
 		try {
