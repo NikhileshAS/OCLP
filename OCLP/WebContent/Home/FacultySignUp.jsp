@@ -109,8 +109,8 @@ function fun()
 {
 	var rollno=document.getElementById("facultyId").value
 	window.alert("registration Successfull!!!!!");
-	window.alert("Your UserName=F_"+facultyId);
-	window.alert("Your Password=F_"+facultyId);
+	window.alert("Your UserName=F_"+rollno);
+	window.alert("Your Password=F_"+rollno);
 	
 	}
 </script>

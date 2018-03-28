@@ -1,8 +1,10 @@
 package com.onlineportal.tp.dao;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 import com.onlineportal.tp.bean.AdministratorBean;
 import com.onlineportal.tp.bean.AssessmentBean;
 import com.onlineportal.tp.bean.FacultyBean;
@@ -10,10 +12,11 @@ import com.onlineportal.tp.bean.StudentBean;
 import com.onlineportal.tp.service.EmailDispatcher;
 import com.onlineportal.tp.util.HibernateUtil;
 
+
 public class UserDAO {
 	private Session sess = HibernateUtil.getSessionFactory().openSession();
 	
-	private EmailDispatcher emailDispatcher = new EmailDispatcher();
+	private EmailDispatcher emailDispatcher;
 
 	@SuppressWarnings({ "unchecked" })
 	//-------- Admin Sign in---------------------
@@ -101,7 +104,8 @@ public class UserDAO {
 		Transaction tc = sess.beginTransaction();
 		try{
 			sess.save(studentBeanObject);
-			emailDispatcher.sendEmail(studentBeanObject.getEmailId(),"Here is your authentication details: \n User Name: "+studentBeanObject.getStudId()+"\n Password: "+ studentBeanObject.getStudPassword());
+			emailDispatcher = new EmailDispatcher(studentBeanObject.getEmailId(),"Here is your authentication details: \n User Name: "+studentBeanObject.getStudId()+"\n Password: "+ studentBeanObject.getStudPassword());
+			emailDispatcher.sendEmail();
 			sess.getTransaction().commit();
 			sess.close();
 			return true;
@@ -118,9 +122,10 @@ public class UserDAO {
 		Transaction tc = sess.beginTransaction();
 		try{
 			sess.save(facultyBeanObject);
-			
-			System.out.println(facultyBeanObject.getEmailId()+" "+facultyBeanObject.getFacultyPassword());
-			emailDispatcher.sendEmail(facultyBeanObject.getEmailId(), "Here is your authentication details: \n User Name: "+facultyBeanObject.getFacultyId()+"\n Password: "+facultyBeanObject.getFacultyPassword());
+			String email = facultyBeanObject.getEmailId();			
+			System.out.println(email+" "+facultyBeanObject.getFacultyPassword());
+			emailDispatcher = new EmailDispatcher(email, "Here is your authentication details:  User Name: "+facultyBeanObject.getFacultyId()+" Password: "+facultyBeanObject.getFacultyPassword());
+			emailDispatcher.sendEmail();
 			sess.getTransaction().commit();
 			sess.close();
 			return true;

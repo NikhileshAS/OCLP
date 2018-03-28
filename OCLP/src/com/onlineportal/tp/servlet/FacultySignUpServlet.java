@@ -3,18 +3,6 @@ package com.onlineportal.tp.servlet;
 
 import java.io.IOException;
 
-import java.text.ParseException;
-
-import java.text.SimpleDateFormat;
-
-import java.util.Date;
-
-import java.util.LinkedList;
-
-import java.util.List;
-
-
-
 import javax.servlet.ServletException;
 
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
 
-
-
 import com.onlineportal.tp.bean.FacultyBean;
-
 import com.onlineportal.tp.dao.UserDAO;
 
 
@@ -69,7 +54,9 @@ public class FacultySignUpServlet extends HttpServlet
         	String email = request.getParameter("email");
 
         	String experience  = request.getParameter("exp");
+        	
         	System.out.println(experience);
+        	
         	String[] subs = request.getParameterValues("course");
 
         	String courses = "";
@@ -80,7 +67,8 @@ public class FacultySignUpServlet extends HttpServlet
         	}
         	
         	String gender=request.getParameter("gender");
-        	System.out.println(courses);
+        	
+        	System.out.println(courses+""+email);
 
         	facultyBean.setFacultyName(userName);
 
@@ -114,7 +102,7 @@ public class FacultySignUpServlet extends HttpServlet
 
         	if(daoObj.facultyRegister(facultyBean))
         	{
-           response.sendRedirect("Login.jsp");
+        		response.sendRedirect("Login.jsp");
             }
 
        }

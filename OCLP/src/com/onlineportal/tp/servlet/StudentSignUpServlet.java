@@ -18,7 +18,6 @@ import org.hibernate.Session;
 import com.onlineportal.tp.bean.StudentBean;
 import com.onlineportal.tp.dao.UserDAO;
 
-import sun.rmi.runtime.Log;
 @WebServlet("/Home/StudentSignUpServlet")
 public class StudentSignUpServlet extends HttpServlet 
 {
