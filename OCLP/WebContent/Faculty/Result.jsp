@@ -32,7 +32,7 @@
   <body>
      <div class="w3-container w3-center w3-animate-bottom">
      <p></p>
-  <h1 align=center>YOUR RESULTS!!!!!</h1>
+  <h1 align=center> R E S U L T S </h1>
  </div>
     <aside class="probootstrap-aside js-probootstrap-aside">
       <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
@@ -56,94 +56,6 @@
       </div>
     </aside>
 
-
-    <main role="main" class="probootstrap-main js-probootstrap-main">
-      <div class="probootstrap-bar">
-        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
-        <div class="probootstrap-main-site-logo"><a href="index.html">Aside</a></a></div>
-      </div>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-xl-8 col-lg-12">
-            <p class="mb-5"><img src="images/img_bg_1.jpg"  class="img-fluid"></p>
-
-            <div class="row">
-              <div class="col-xl-8 col-lg-12 mx-auto">
-                <h1 class="mb-3"> </h1>
-               
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <!-- END row -->
-
-        <section class="probootstrap-section">
-          <div class="container-fluid">
-            <div class="row mb-5">
-              
-              <div class="col-lg-4 col-md-6">
-                <div class="media d-block mb-4 text-left probootstrap-media p-md-5 p-4">
-                  <div class="probootstrap-icon mb-3"><span class="oi oi-thumb-up display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0"></h5>
-                  <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="media d-block mb-4 text-left probootstrap-media p-md-5 p-4">
-                  <div class="probootstrap-icon mb-3"><span class="oi oi-wrench display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">Web Development</h5>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="media d-block mb-4 text-left probootstrap-media p-md-5 p-4">
-                  <div class="probootstrap-icon mb-3"><span class="oi oi-person display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">For People Like You</h5>
-                    <p> </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <div class="media d-block mb-4 text-left probootstrap-media p-md-5 p-4">
-                  <div class="probootstrap-icon mb-3"><span class="oi oi-location display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">Free Bootstrap 4</h5>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="media d-block mb-4 text-left probootstrap-media p-md-5 p-4">
-                  <div class="probootstrap-icon mb-3"><span class="oi oi-monitor display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">Web Development</h5>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="media d-block mb-4 text-left probootstrap-media p-md-5 p-4">
-                  <div class="probootstrap-icon mb-3"><span class="oi oi-pencil display-4"></span></div>
-                  <div class="media-body">
-                    <h5 class="mt-0">For People Like You</h5>
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            
-
-            
-          </div>
-        </section>
         <!-- END section -->
 
       </div>

@@ -26,7 +26,6 @@ public class LoginServlet extends HttpServlet {
 		String loginId=request.getParameter("userName");
 		String password=request.getParameter("password");
 		HttpSession session = request.getSession(true);
-		String successDestination = "../Faculty/Home.jsp";
 		
 		try{
 		UserDAO dao = new UserDAO();
@@ -36,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 			StudentBean stud = dao.checkStudentSignIn(loginId, password);
 			if(stud != null) {
 				session.setAttribute("session", stud);
-				response.sendRedirect(successDestination);
+				response.sendRedirect("../Student/Home.jsp");
 			}
 			else {
 				session.setAttribute("session", "invalid");
@@ -51,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 			if(facultyBeanObj != null) 
 			{
 				session.setAttribute("session", facultyBeanObj);
-				response.sendRedirect(successDestination);
+				response.sendRedirect("../Faculty/Home.jsp");
 
 			}
 			else
@@ -66,7 +65,7 @@ public class LoginServlet extends HttpServlet {
 			AdministratorBean administratorBeanObj = dao.checkAdministratorSignIn(loginId, password);
 			if(administratorBeanObj != null) {
 				session.setAttribute("session", administratorBeanObj);
-				response.sendRedirect(successDestination);
+				response.sendRedirect("../Faculty/Home.jsp");
 
 			}
 			else

@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.exception.ConstraintViolationException;
 
 import com.onlineportal.tp.bean.AdministratorBean;
 import com.onlineportal.tp.bean.AssessmentBean;
+import com.onlineportal.tp.bean.CourseBean;
 import com.onlineportal.tp.bean.FacultyBean;
 import com.onlineportal.tp.bean.StudentBean;
 import com.onlineportal.tp.service.EmailDispatcher;
@@ -104,7 +106,8 @@ public class UserDAO {
 		Transaction tc = sess.beginTransaction();
 		try{
 			sess.save(studentBeanObject);
-			emailDispatcher = new EmailDispatcher(studentBeanObject.getEmailId(),"Here is your authentication details: \n User Name: "+studentBeanObject.getStudId()+"\n Password: "+ studentBeanObject.getStudPassword());
+			System.out.println(studentBeanObject.getEmailId());
+			emailDispatcher = new EmailDispatcher(studentBeanObject.getEmailId(),"\n Here is your authentication details: \n User Name: "+studentBeanObject.getStudId()+"\n Password: "+ studentBeanObject.getStudPassword());
 			emailDispatcher.sendEmail();
 			sess.getTransaction().commit();
 			sess.close();
@@ -124,7 +127,7 @@ public class UserDAO {
 			sess.save(facultyBeanObject);
 			String email = facultyBeanObject.getEmailId();			
 			System.out.println(email+" "+facultyBeanObject.getFacultyPassword());
-			emailDispatcher = new EmailDispatcher(email, "Here is your authentication details:  User Name: "+facultyBeanObject.getFacultyId()+" Password: "+facultyBeanObject.getFacultyPassword());
+			emailDispatcher = new EmailDispatcher(email, "\n Here is your authentication details:  \n User Name: "+facultyBeanObject.getFacultyId()+"\n Password: "+facultyBeanObject.getFacultyPassword());
 			emailDispatcher.sendEmail();
 			sess.getTransaction().commit();
 			sess.close();
@@ -136,10 +139,31 @@ public class UserDAO {
 		return false;
 	}
 	//------add assessment-------
-	public boolean addAssessment(AssessmentBean assessment) {
+	public String  addAssessment(AssessmentBean assessment) {
 		Transaction tc = sess.beginTransaction();
 		try {
 			sess.save(assessment);
+			sess.getTransaction().commit();
+			sess.close();
+			return "success";
+		}
+		catch(ConstraintViolationException e) {
+			e.printStackTrace();
+			return	"constraint fault";	
+		}
+		catch(NullPointerException e) {
+			e.printStackTrace();
+			return "null pointer";
+		}
+		
+	}
+	
+	//--------------------- Add Course-----------------------
+	
+	public boolean addCourse(CourseBean courseObj) {
+		Transaction tc = sess.beginTransaction();
+		try {
+			sess.save(courseObj);
 			sess.getTransaction().commit();
 			sess.close();
 			return true;
@@ -148,6 +172,5 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return false;
-		
 	}
 }

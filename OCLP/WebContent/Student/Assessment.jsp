@@ -32,7 +32,7 @@
   
     <div class="w3-container w3-center w3-animate-bottom">
     <p></p>
-  <h1 align=center>ASSESSMENT!!!!!</h1>
+  <h1 align=center>A S S E S S M E N T </h1>
  </div>
    <aside class="probootstrap-aside js-probootstrap-aside">
       <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
@@ -57,19 +57,125 @@
     </aside>
 
 
+
+    
     <main role="main" class="probootstrap-main js-probootstrap-main">
       <div class="probootstrap-bar">
         <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
-        <div class="probootstrap-main-site-logo"><a href="index.html">Aside</a></a></div>
+        <div class="probootstrap-main-site-logo"><a href="index.jsp">Aside</a></a></div>
       </div>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-xl-8 col-lg-12">
-            <p class="mb-5"><img src="images/img_bg_2.jpg"  class="img-fluid"></p>
+      <div class="card-columns">
 
-            <div class="row">
-              <div class="col-xl-8 col-lg-12 mx-auto">
-                <h1 class="mb-3">   </h1>
+      <%try{
+      	
+%>
+
+      <div class="card">
+      <div class="container">
+          <a href="SelectSubjectTestServlet?item=ds">
+            <img class="card-img-top probootstrap-animate" src="images/DS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    			<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="ds">Data Structures</div>
+ 			 	</div>
+  			</div>
+        </div>
+        
+      
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=c">
+            <img class="card-img-top probootstrap-animate" src="images/c.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    		<div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c">C</div>
+  </div>
+        </div>
+        </div>
+
+        
+    
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=c++">
+            <img class="card-img-top probootstrap-animate" src="images/C++.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="c++">C++</div>
+  </div>
+        </div>
+        </div>
+       
+    
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=os">
+            <img class="card-img-top probootstrap-animate" src="images/OS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="os">Operating System</div>
+  </div>
+        </div>
+        </div>
+
+     
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=java">
+            <img class="card-img-top probootstrap-animate" src="images/java.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="java">Java</div>
+  </div>
+        </div>
+        </div>
+       
+        
+    
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=cn">
+            <img class="card-img-top probootstrap-animate" src="images/CN.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="CN">Computer Network</div>
+  </div>
+        </div>
+        </div>
+
+        
+     
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=dbms">
+            <img class="card-img-top probootstrap-animate" src="images/DBMS.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="DBMS">DBMS</div>
+  </div>
+        </div>
+        </div>
+
+        
+     
+        <div class="card">
+        <div class="container">
+          <a href="SelectSubjectTestServlet/item=aptitude">
+            <img class="card-img-top probootstrap-animate" src="images/APTITUDE.jpg" alt="Card image cap" data-animate-effect="fadeIn">
+          </a>
+           <div class="overlay">
+    <div class="text" style="color:white;font-size:20px;font-family:"Arial" name="apti">Aptitude</div>
+  </div>
+        </div>
+        </div>
+        <%
+      	      	
+      	}catch(NullPointerException e){
+      		response.sendRedirect("../Home/Login.jsp");
+			
+      	}
+      	 %>
+    
                 
                 
                 
@@ -82,83 +188,6 @@
           </div>
         </div>
         <!-- END row -->
-
-        <section class="probootstrap-section">
-          <div class="container-fluid">
-            <div class="row mb-5 justify-content-center">
-              <div class="col-md-8">
-                <div class="row">
-                  <div class="col-md-8 mx-auto">
-                    <h2 class="h1 mb-5 mt-0"></h2>    
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <div class="row mb-5">
-              <div class="col-md-12">
-                <div class="owl-carousel probootstrap-owl">
-                  <div class="item">
-                    <img src="images/person_1.jpg" class="img-fluid" alt="Free Template by ProBootstrap.com">
-                    <div class="p-4 border border-top-0">
-                      <h4>James Carl</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="images/person_2.jpg" class="img-fluid" alt="Free Template by ProBootstrap.com">
-                    <div class="p-4 border border-top-0">
-                      <h4>Craig Smith</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="images/person_3.jpg" class="img-fluid" alt="Free Template by ProBootstrap.com">
-                    <div class="p-4 border border-top-0">
-                      <h4>Peter Wood</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="images/person_1.jpg" class="img-fluid" alt="Free Template by ProBootstrap.com">
-                    <div class="p-4 border border-top-0">
-                      <h4>James Carl</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <img src="images/person_2.jpg" class="img-fluid" alt="Free Template by ProBootstrap.com">
-                    <div class="p-4 border border-top-0">
-                      <h4>Craig Smith</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-
-            
-          </div>
-        </section>
-        <!-- END section -->
-
-      </div>
-
-      <div class="container-fluid d-md-none">
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="list-unstyled d-flex probootstrap-aside-social">
-              <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
-              <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
-              <li><a href="#" class="p-2"><span class="icon-dribbble"></span></a></li>
-            </ul>
-            <p>&copy; 2017 <a href="https://probootstrap.com/" target="_blank">ProBootstrap:Aside</a>. <br> All Rights Reserved. Designed by <a href="https://probootstrap.com/" target="_blank">ProBootstrap.com</a></p>
-          </div>
-        </div>
-      </div>
-    </main>
-
     
 
     <script src="js/jquery-3.2.1.slim.min.js"></script>

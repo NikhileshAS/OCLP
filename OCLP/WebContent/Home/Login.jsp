@@ -93,6 +93,10 @@
  <h3 style="font-family: sans-serif;;font-weight:bold;color:navy;">SIGN-IN</h3>
 <%
 try{
+	session.setAttribute("testId", null);
+	session.setAttribute("count", 0);
+	session.setAttribute("exception",null);
+	
 	
 	if(request.getSession().getAttribute("session").equals("invalid")){
 		out.println("<h5>Invalid username or password</h5>");

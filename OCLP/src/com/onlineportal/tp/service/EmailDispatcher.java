@@ -47,7 +47,7 @@ public class EmailDispatcher {
 			msg.setFrom(new InternetAddress("nikhi.ajay96@gmail.com"));
 			msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(toMail));
 			msg.setSubject("KCE|Online Course Learning Portal Access Details");
-			msg.setText(message);
+			msg.setText("KARPGAM COLLEGE OF ENGINEERING - ONLINE LEARNING PORTAL HEARTLY WELCOMES YOU. WE WISH YOU VERY ALL THE BEST AND A GREAT LEARNING PROCESS AHEAD.\n"+message);
 			System.out.println("Sending email");
 			Transport.send(msg); 
 

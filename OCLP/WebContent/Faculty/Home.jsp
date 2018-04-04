@@ -75,6 +75,15 @@
     
   </head>
   <body>
+  <form action = "LogoutServlet"name = "logoutButton" method="post">
+  <% if(request.getSession().getAttribute("session") != null){
+	   %>
+	   
+		<input type = "submit" style="float: right;"  class="btn btn-primary" value = "Log out" onclick="">
+		</form>
+		<%}%>
+
+  
   <form name="upload" action="UploadServlet.java" method="get">
   <div class="w3-container w3-center w3-animate-bottom">
   <h1 align="center">START LEARNING!!!!!</h1>
@@ -84,7 +93,6 @@
   FacultyBean facultyBean=(FacultyBean) request.getSession().getAttribute("session");
   
   %>
-
   <h2 align="center">Welcome, <%= facultyBean.getFacultyName() %></h2>
  <% try{
  	String subs = facultyBean.getCoursesEnrolled();

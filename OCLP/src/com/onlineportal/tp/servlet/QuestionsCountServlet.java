@@ -20,6 +20,7 @@ public class QuestionsCountServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		int count = Integer.parseInt(request.getParameter("count"));
+		session.setAttribute("testId", null);
 		session.setAttribute("count", count);
 		response.sendRedirect("Assessment.jsp");
 	}

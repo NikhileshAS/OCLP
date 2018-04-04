@@ -1,17 +1,19 @@
 package com.onlineportal.tp.bean;
 
+import javax.persistence.Id;
+
 public class CourseBean {
+	@Id
 	private String couseId;
 	private String courseName;
 	private int noOfStudentsEnrolled;
-	private float clearingCutOff;
+	private double clearingCutOff;
 	private String facultyId;
-	private int courseCount=0;
 	
 	
 	public CourseBean() {
 		super();
-		courseCount++;
+		
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -33,7 +35,7 @@ public class CourseBean {
 	public void setNoOfStudentsEnrolled(int noOfStudentsEnrolled) {
 		this.noOfStudentsEnrolled = noOfStudentsEnrolled;
 	}
-	public float getClearingCutOff() {
+	public double getClearingCutOff() {
 		return clearingCutOff;
 	}
 	
@@ -46,12 +48,7 @@ public class CourseBean {
 	public void setFacultyId(String facultyId) {
 		this.facultyId = facultyId;
 	}
-	public int getCourseCount() {
-		return courseCount;
-	}
-	public void setCourseCount(int courseCount) {
-		this.courseCount = courseCount;
-	}
+	
 	
 	
 	

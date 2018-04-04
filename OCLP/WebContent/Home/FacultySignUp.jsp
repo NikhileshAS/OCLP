@@ -108,7 +108,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 function fun()
 {
 	var rollno=document.getElementById("facultyId").value
-	window.alert("registration Successfull!!!!!");
+	window.alert("Registration Successfull!!!!!");
 	window.alert("Your UserName=F_"+rollno);
 	window.alert("Your Password=F_"+rollno);
 	

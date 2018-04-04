@@ -26,23 +26,25 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <script type = "text/javascript">
+	function exceptionDisplay(){
+		window.alert("Please enter all the questions and options !");
+	}
+	</script>
 
   </head>
   <body>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/NikhileshAS/OCLP.git
+  	<form action = "LogoutServlet"name = "logoutButton" method="post">
   
-=======
      <% if(request.getSession().getAttribute("session") != null){
 	   %>
-	   <form action = "LogoutServlet"name = "logoutButton" method="post">
 		<input type = "submit" style="float: right;"  class="btn btn-primary" value = "Log out" onclick="">
 		</form>
 		<%}%>
-		
->>>>>>> 868137b All To Rebase
     <div class="w3-container w3-center w3-animate-bottom">
     <p></p>
-  <h1 align=center>ASSESSMENT!!!!!</h1>
+  <h1 align=center>A D D      A S S E S S M E N T </h1>
  </div>
    <aside class="probootstrap-aside js-probootstrap-aside">
       <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><span class="oi oi-arrow-left"></span> Close</a>
@@ -66,7 +68,16 @@
       </div>
     </aside>
 	<h3 align = "center">
+	<% String exception = (String) request.getSession().getAttribute("exception");
 	
+	if(exception != null){ %>
+		<script type="text/javascript">
+		exceptionDisplay();
+		</script>
+		<%
+	}
+		
+	%>
 	<form action="QuestionsCountServlet" name="questionForm" method="post" >
 	
 		Enter Number of Questions :<input type="text" name = "count">
@@ -76,15 +87,19 @@
 	
 	<%
 	int count = 0;
+	String testId = null;
+
 	try{
 	 count = (int)request.getSession().getAttribute("count");
-	}
-	catch(NullPointerException e){
-		e.printStackTrace();
-	}
+	 
+	 if(count != 0 ){
+	
+	
 	%>
 	<form name = "questions" action = "AssessmentServlet" method = "post">
+			<h4 align = "center">Enter course ID: <input type = "text" name="courseId"></h4>
 		<%
+		
 			for(int i=0;i<count;i++){
 				%>				
 				<h4 align="center">
@@ -104,28 +119,41 @@
 				Option C: <input  align="center" type = "text" name="optionC">
 				
 				<br>
+				
 				Option D: <input align="center" type = "text" name="optionD">
-				<br>	
+				
+				<br>
+					
 				</h5>
 				
 				
-				<% } %>
+				<% }
+		
+		%>
 				<h3 align="center"><input  type="submit" name="submit" value="SUBMIT" onclick=""></h3>
+				<% } }
+					catch(NullPointerException e){
+					e.printStackTrace();
+				} %>
 	</form> 
 	
 	<%
-	
 	try{
-		String testId = (String) request.getSession().getAttribute("testId");
+		 testId = (String) request.getSession().getAttribute("testId");
+		if(testId != null){
 		
 		%>
-		<h3 align ="center" Your test is ><% System.out.print(testId);%></h3>
+		<h3 align ="center">Assessment uploaded successfully.Your Assessment ID is  = <%= testId %></h3>
 		<%
+		
+		}
 	}
 	catch(Exception e){
 		e.printStackTrace();
 	}
 	%>
+	
+	
     
 
     <script src="js/jquery-3.2.1.slim.min.js"></script>
